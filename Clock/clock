@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # This programs will run a clock on your terminal and can be stopped with ^C
 #I will use sleep to count seconds then count echo minutes and hours along the way
-
+#Below I have changed the variables to get input from the users. Next I will have to
+#add a way to validate that the user has input a correct integers
 seconds=0
-minutes=0
-hour=0
+read -p 'Enter the Hour! (Choose a number between 0 and 23) ' hour
+read -p 'Enter the minutes! (Choose a number between 0 and 59) ' minutes
 
 while ((seconds<60));
 do
