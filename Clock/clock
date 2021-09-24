@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# This programs will run a clock on your terminal and can be stopped with ^C
+#I will use sleep to count seconds then count echo minutes and hours along the way
+
+seconds=0
+minutes=0
+hour=0
+
+while ((seconds<60));
+do
+    echo $seconds
+    ((seconds++))
+    sleep 1
+    if [ $seconds -eq 60 ];
+    then
+	((minutes++))
+	seconds=0
+	if [ $minutes -ne 60 ]
+	then
+	    echo "It's been ${minutes} minutes since I started!"
+	fi
+    fi
+    if ((minutes==60));
+    then
+	((hour++))
+	echo "It has been ${hour} hours since I started!"
+	minutes=0
+    fi
+done
